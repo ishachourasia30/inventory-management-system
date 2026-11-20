@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inventory Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Inventory Management System</h1>
+        <p>Using C++ Console</p>
+    </header>
+
+    <!-- MAIN MENU -->
+    <section id="home" class="page">
+        <h2>Main Menu</h2>
+        <p>Select an operation to continue.</p>
+
+        <div class="menu">
+            <button onclick="showPage('add')">1. Add Product</button>
+            <button onclick="showPage('view')">2. View Products</button>
+            <button onclick="showPage('search')">3. Search Product</button>
+            <button onclick="showPage('update')">4. Update Quantity</button>
+            <button onclick="showPage('order')">5. Place Order</button>
+            <button onclick="showPage('track')">6. Track Orders</button>
+            <button class="exit" onclick="showPage('exit')">7. Exit</button>
+        </div>
+    </section>
+
+    <!-- ADD PRODUCT -->
+    <section id="add" class="page hidden">
+        <h2>Add Product</h2>
+
+        <label>Select Product:</label>
+        <select id="product">
+            <option value="">Select a product</option>
+            <option value="1">Notebook - Rs. 50</option>
+            <option value="2">Pen - Rs. 10</option>
+            <option value="3">Pencil - Rs. 5</option>
+            <option value="4">Eraser - Rs. 5</option>
+            <option value="5">Book - Rs. 40</option>
+            <option value="6">School Bag - Rs. 500</option>
+            <option value="7">Water Bottle - Rs. 150</option>
+            <option value="8">Scale - Rs. 10</option>
+            <option value="9">Sharpener - Rs. 5</option>
+            <option value="10">Marker - Rs. 30</option>
+            <option value="11">File - Rs. 25</option>
+            <option value="12">Stapler - Rs. 60</option>
+            <option value="13">Glue - Rs. 20</option>
+            <option value="14">Scissors - Rs. 40</option>
+            <option value="15">Calculator - Rs. 300</option>
+            <option value="16">Register - Rs. 80</option>
+            <option value="17">Highlighter - Rs. 25</option>
+            <option value="18">Geometry Box - Rs. 100</option>
+            <option value="19">Paper - Rs. 2</option>
+            <option value="20">Clipboard - Rs. 70</option>
+        </select>
+
+        <label>Enter Quantity:</label>
+        <input type="number" id="addQuantity" min="1" placeholder="Enter quantity">
+
+        <button onclick="showMessage('Add Product')">Confirm</button>
+        <button class="back" onclick="showPage('home')">Back to Menu</button>
+        <p id="addMessage"></p>
+    </section>
+
+    <!-- VIEW PRODUCTS -->
+    <section id="view" class="page hidden">
+        <h2>View Products</h2>
+        <p>View all available products and their details.</p>
+
+        <div id="productList"></div>
+
+        <button class="back" onclick="showPage('home')">Back to Menu</button>
+    </section>
+
+    <!-- SEARCH PRODUCT -->
+    <section id="search" class="page hidden">
+        <h2>Search Product</h2>
+
+        <label>Enter Product ID:</label>
+        <input type="number" id="searchId" placeholder="Enter Product ID">
+
+        <button onclick="showMessage('Search Product')">Search</button>
+        <div id="searchMessage"></div>
+
+        <button class="back" onclick="showPage('home')">Back to Menu</button>
+    </section>
+
+    <!-- UPDATE QUANTITY -->
+    <section id="update" class="page hidden">
+        <h2>Update Quantity</h2>
+
+        <label>Enter Product ID:</label>
+        <input type="number" id="updateId" placeholder="Enter Product ID">
+
+        <label>Enter New Quantity:</label>
+        <input type="number" id="newQuantity" min="0" placeholder="Enter new quantity">
+
+        <button onclick="showMessage('Update Quantity')">Confirm Update</button>
+        <p id="updateMessage"></p>
+
+        <button class="back" onclick="showPage('home')">Back to Menu</button>
+    </section>
+
+    <!-- PLACE ORDER -->
+    <section id="order" class="page hidden">
+        <h2>Place Order</h2>
+
+        <label>Enter Product ID:</label>
+        <input type="number" id="orderProductId" placeholder="Enter Product ID">
+
+        <label>Enter Order Quantity:</label>
+        <input type="number" id="orderQuantity" min="1" placeholder="Enter quantity">
+
+        <button onclick="showMessage('Place Order')">Confirm Order</button>
+        <p id="orderMessage"></p>
+
+        <button class="back" onclick="showPage('home')">Back to Menu</button>
+    </section>
+
+    <!-- TRACK ORDERS -->
+    <section id="track" class="page hidden">
+        <h2>Track Orders</h2>
+        <p>View your order details and current status.</p>
+
+        <div id="orderList"></div>
+
+        <button class="back" onclick="showPage('home')">Back to Menu</button>
+    </section>
+
+    <!-- EXIT -->
+    <section id="exit" class="page hidden">
+        <h2>Exit Program</h2>
+        <p>Are you sure you want to exit?</p>
+
+        <button class="exit" onclick="showPage('home')">Yes, Exit</button>
+        <button class="back" onclick="showPage('home')">No, Go Back</button>
+    </section>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
